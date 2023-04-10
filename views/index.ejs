@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Iwè</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+   
+        </form>
+    
+        <!-- we create a table for the inputted notes -->
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">TODOS</th>
+              <th scope="col">ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% todos.map((i, index) => { %>
+    <tr>
+      <th scope="row"><%= index+1 %></th>
+            <td><%= i.todo %></td>
+            <td>
+              <form action='<%= /deleteTodo/ +i.id%>' method="POST">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            
+              </form>
+            </td>
+            </tr>
+            <% }) %>
+    
+    
+          </tbody>
+        </table>
+   <button><a href="/addTodo">Add note</a></button> 
+     
+   <div class="footer">
+    <p>Copyright &copy 2023 الأوفوي </p>
+  </div>
+  
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
