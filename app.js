@@ -1,7 +1,7 @@
 const express = require('express');
 
 
-let todos = [{id:1,todo:'wash cloth'}];
+let todos = [];
 //call the express and Body-parser
 const app = express();
 const PORT = process.env.PORT||3000
@@ -28,10 +28,10 @@ app.get('/addTodo', function (req, res) {
 //then, we use app.post option.
 app.post("/addTodo", function (req, res) {
   //assigning Note id to the notes using math.random
-  const userTodo = {}
-
-   userTodo.id = Math.random() * 100;
-  userTodo.body = req.body.todo;
+  const userTodo = {
+id : Math.random() * 100,
+  todo : req.body.todo
+}
   todos.push(userTodo);
   //then we redirect it to the root route
   res.redirect('/');
